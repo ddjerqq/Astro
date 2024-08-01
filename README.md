@@ -1,6 +1,8 @@
 # Astro
 
-## prerequisites
+{{description here}}
+
+## Prerequisites
 
 - [node + npm](https://nodejs.org/en/download/)
 - [dotnet sdk 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
@@ -17,6 +19,13 @@
   ```bash
   dotnet run
   ```
+  
+## Adding features
+- make sure you target the dev branch
+- name your branches in kebab-case for consistency e.g. feature-add-new-page
+- name the PRs in the same way as the branches but with a more descriptive title e.g. Feature: added new page
+- if the PR is Work In Progress prefix it with \[WIP\] and make it a draft PR
+- open the PR and assign it to the project manager for review
 
 ## Authors
 

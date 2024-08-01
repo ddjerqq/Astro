@@ -39,3 +39,8 @@ services:
     volumes:
       - ./.logs/seq/:/data
     restart: unless-stopped
+  discordclient:
+    image: discordclient
+    build:
+      context: .
+      dockerfile: src/DiscordClient/Dockerfile
