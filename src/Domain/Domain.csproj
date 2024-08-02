@@ -22,10 +22,8 @@
     </ItemGroup>
 
     <ItemGroup>
-        <Folder Include="Aggregates\"/>
         <Folder Include="Entities\"/>
         <Folder Include="Events\" />
-        <Folder Include="ValueObjects\"/>
     </ItemGroup>
 
     <ItemGroup>
