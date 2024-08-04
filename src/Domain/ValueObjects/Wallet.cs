@@ -9,7 +9,7 @@ public record Wallet(decimal Balance)
 
     public bool HasBalance(decimal amount)
     {
-        if (amount == 0) throw new ArgumentException("amount can't be 0");
+        if (amount <= 0) throw new ArgumentException("amount must be positive and non zero");
         return Balance >= amount;
     }
 
