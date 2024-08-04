@@ -23,7 +23,7 @@ public record Wallet(decimal Balance)
 
     public bool HasBalance(decimal amount)
     {
-        if (amount == Balance) return true;
+        if (amount == Balance || Balance > amount) return true;
         return false;
     }
 
