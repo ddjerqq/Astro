@@ -1,10 +1,9 @@
 using Domain.Aggregates;
 namespace Domain.ValueObjects;
 
-public class Wallet
-{
-    public User User { get; set; } = default!;
-    private decimal Balance { get; set; }
+public record Wallet(decimal Balance){
+    public User User { get; set; }
+    private decimal Balance { get; set; } = Balance;
     
     public bool HasBalance(decimal amount)
     {
@@ -14,6 +13,7 @@ public class Wallet
 
     public bool TryTranfer(Wallet other)
     {
-         
+          //todo add transfer logic
+          throw new NotImplementedException();
     }
 }
