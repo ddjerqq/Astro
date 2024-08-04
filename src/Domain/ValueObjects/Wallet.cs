@@ -5,26 +5,25 @@ namespace Domain.ValueObjects;
 public record Wallet(decimal Balance)
 {
 
-    public decimal Balance { get; private set; }
+    public decimal Balance { get; private set; } = Balance;
 
     public bool HasBalance(decimal amount)
     {
-        if (Balance >= amount) return true;
-        return false;
+        if (amount == 0) throw new ArgumentException("amount can't be 0");
+        return Balance >= amount;
     }
 
-    public bool TryTranfer(Wallet other, decimal amount)
+    public bool TryTransfer(Wallet other, decimal amount)
     {
         
-        // check if user has enough balance if not return false
+        // check if user has enough balance if yes, transfer return true. if not return false
         if (HasBalance(amount))
         {
-            return false;
+            other.Balance += amount;
+            Balance -= amount;
+            return true;
         }
 
-        // if users balance won't be negative after we deduct, then we can say he has enough balance, so we can transfer the money 
-        other.Balance += amount;
-        Balance -= amount;
-        return true;
+        return false;
     }
 }
