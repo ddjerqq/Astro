@@ -6,7 +6,7 @@ using DSharpPlus.Entities;
 
 namespace DiscordClient;
 
-public sealed class CommandHandlers(/* IDependency dependency */)
+public sealed class CommandHandlers( /* IDependency dependency */)
 {
     // a check, that enforces that this command can only be used in Guilds (servers)
     [RequireGuild]
@@ -19,6 +19,19 @@ public sealed class CommandHandlers(/* IDependency dependency */)
             .WithDescription($"Pong! 🏓\nLatency: {delay.Millisecond}ms")
             .WithColor(DiscordColor.Green));
     }
+
+
+
+    [Command("freakometer")]
+    [Description("Shows how 𝓯𝓻𝓮𝓪𝓴𝔂 someone is")]
+    public async Task Freak(CommandContext context, DiscordUser user)
+    {
+        await.context.RespondAsync(new DiscordEmbedBuilder()
+            .WithDescription($"{user.Name} 𝓯𝓻𝓮𝓪𝓴𝔂ness is {Random.Shared.Next(101)}")
+            .WithImage()
+            .WithColor(DiscordColor.Green));
+    }
+
 
     // add two ints
     [Command("add")]
