@@ -11,14 +11,14 @@ using Persistence;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240807154537_wallet")]
-    partial class wallet
+    [Migration("00000000000000_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder.HasAnnotation("ProductVersion", "8.0.7");
+            modelBuilder.HasAnnotation("ProductVersion", "8.0.6");
 
             modelBuilder.Entity("Application.Common.OutboxMessage", b =>
                 {
@@ -96,10 +96,6 @@ namespace Persistence.Migrations
                         .HasMaxLength(32)
                         .HasColumnType("TEXT")
                         .HasColumnName("username");
-
-                    b.Property<decimal>("Wallet")
-                        .HasColumnType("TEXT")
-                        .HasColumnName("wallet");
 
                     b.HasKey("Id")
                         .HasName("p_k_user");

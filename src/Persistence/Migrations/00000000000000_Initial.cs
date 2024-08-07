@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Persistence.Migrations
 {
     /// <inheritdoc />
-    public partial class wallet : Migration
+    public partial class Initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -35,7 +35,6 @@ namespace Persistence.Migrations
                     username = table.Column<string>(type: "TEXT", maxLength: 32, nullable: false),
                     email = table.Column<string>(type: "TEXT", maxLength: 256, nullable: false),
                     password_hash = table.Column<string>(type: "TEXT", maxLength: 64, nullable: false),
-                    wallet = table.Column<decimal>(type: "TEXT", nullable: false),
                     created = table.Column<DateTime>(type: "TEXT", nullable: true),
                     created_by = table.Column<string>(type: "TEXT", nullable: true),
                     last_modified = table.Column<DateTime>(type: "TEXT", nullable: true),
