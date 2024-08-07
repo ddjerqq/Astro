@@ -1,5 +1,5 @@
-using Domain.Abstractions;
 using Astro.Generated;
+using Domain.Abstractions;
 using Domain.ValueObjects;
 
 namespace Domain.Aggregates;
@@ -13,6 +13,5 @@ public sealed class User(UserId id) : AggregateRoot<UserId>(id)
 
     public string PasswordHash { get; init; } = default!;
     
-
-    public Wallet Wallet { get; init; } = default!;
+    public Wallet Wallet { get; set; } = new Wallet(0);
 }
