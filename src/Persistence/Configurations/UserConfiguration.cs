@@ -1,5 +1,6 @@
 using System.ComponentModel;
 using Domain.Aggregates;
+using Domain.ValueObjects;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -21,5 +22,8 @@ internal class UserConfiguration : IEntityTypeConfiguration<User>
 
         builder.Property(x => x.PasswordHash)
             .HasMaxLength(64);
+
+        builder.Property(x => x.Wallet)
+            .HasConversion(from => from.Balance, to => new Wallet(to));
     }
 }
