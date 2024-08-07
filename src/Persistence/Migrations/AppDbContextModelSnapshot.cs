@@ -94,6 +94,10 @@ namespace Persistence.Migrations
                         .HasColumnType("TEXT")
                         .HasColumnName("username");
 
+                    b.Property<decimal>("Wallet")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("wallet");
+
                     b.HasKey("Id")
                         .HasName("p_k_user");
 

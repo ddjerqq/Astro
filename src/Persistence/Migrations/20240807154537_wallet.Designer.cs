@@ -11,7 +11,7 @@ using Persistence;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240807151406_wallet")]
+    [Migration("20240807154537_wallet")]
     partial class wallet
     {
         /// <inheritdoc />
@@ -96,6 +96,10 @@ namespace Persistence.Migrations
                         .HasMaxLength(32)
                         .HasColumnType("TEXT")
                         .HasColumnName("username");
+
+                    b.Property<decimal>("Wallet")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("wallet");
 
                     b.HasKey("Id")
                         .HasName("p_k_user");
