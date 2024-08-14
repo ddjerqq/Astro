@@ -15,9 +15,9 @@ public sealed class TransactionValidator : AbstractValidator<BalanceTransactionC
 {
     public TransactionValidator()
     {
-        RuleSet("async", () => { RuleFor(x => x.amount)
-            .GreaterThanOrEqualTo(0)
-            .WithMessage("amount can not be 0 or less");});
+        RuleFor(x => x.amount)
+            .LessThanOrEqualTo(0)
+            .WithMessage("amount can not be 0 or less");
        
     }
 }
@@ -31,7 +31,7 @@ public sealed class BalanceTransactionCommandHandler(IAppDbContext dbContext, Ca
     {
         // request.reciver.Wallet.Balance + request.amount;
         // request.sender.Wallet.Balance - request.amount;
-        dbContext.Set<User>();
+        // dbContext.Set<User>();
     };
 
 }
