@@ -1,7 +1,7 @@
 namespace Domain.ValueObjects;
 
-public class ItemQuality
+public record ItemQuality(float Value, bool statTrak)
 {
-    float Value { get; set; }
-    private bool IsStatTrack { get; set; }
+    float Value { get; set; } = Value;
+    private bool IsStatTrack { get; set; } = statTrak;
 }

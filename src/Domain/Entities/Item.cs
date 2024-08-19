@@ -1,15 +1,16 @@
 using Astro.Generated;
+using Domain.Abstractions;
 using Domain.Aggregates;
 using Domain.ValueObjects;
 
 namespace Domain.Entities;
 
-public class Item
+[StrongId(typeof(Ulid))]
+public sealed class Item(ItemId id) : Entity<ItemId>(id)
 {
-    private ItemId Id { get; set; }
-    private ItemTypeId TypeId { get; set; } 
-    private ItemType Type { get; set; }
-    ItemQuality Quality { get; set; }
-    UserId OwnerId { get; set; }
-    User Owner { get; set; }
+    public ItemTypeId TypeId { get; init; }
+    public ItemType Type { get; init; } = default!;
+    public ItemQuality Quality { get; init; } = default!;
+    public UserId OwnerId { get; init; } = default!;
+    public User Owner { get; init; } = default!;
 }
